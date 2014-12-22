@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- DW6 -->
+<head>
+<!-- Copyright 2005 Macromedia, Inc. All rights reserved. -->
+<title>Experiment 5</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="mm_health_nutr.css" type="text/css" />
+<script language="JavaScript" type="text/javascript">
+<!--
+//--------------- LOCALIZEABLE GLOBALS ---------------
+var d=new Date();
+var monthname=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+//Ensure correct for language. English is "January 1, 2004"
+var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+function frequency()
+	{
+	var len=document.frm.txt1.value;
+	var breadth=document.frm.txt2.value;
+	var height=document.frm.txt3.value;
+	var density=document.frm.txt4.value;	
+	var youngs=document.frm.txt5.value;
+	
+	
+	for(var i=0; i<document.frm.option1.length; i++)
+        {
+         if (document.frm.option1[i].checked==true)
+         {
+            var nat =document.frm.option1[i].value;
+         }
+	}
+	if(breadth == 0 && height ==0)	
+	{
+	var area = document.frm.txt7.value;
+	var inertia = document.frm.txt8.value;
+	}
+	else
+	{
+	area = breadth* height;
+	inertia = area*height*height/12;
+	}
+	var j = density*area;
+	var sq = Math.sqrt(youngs*inertia/j);
+	var A = Math.PI*nat*nat/2/len/len;
+	var freq = sq*A;
+	document.frm.txt6.value= freq;
+	}
+	    function check_value(fieldvalue)
+ 	   {    
+        switch(fieldvalue)
+        {
+            case 1:
+
+                document.getElementById("imagedest").innerHTML = "<img  src='1sinewave.gif'>";
+                    break;
+
+            case 2:
+
+                document.getElementById("imagedest").innerHTML = "<img src='2sinewave.gif'>"; 
+                    break;
+
+            case 3:
+
+                document.getElementById("imagedest").innerHTML = "<img src='3sinewave.gif'>"; 
+                    break;
+            case 4:
+
+                document.getElementById("imagedest").innerHTML = "<img src='4sinewave.gif'>"; 
+                    break;
+            case 5:
+
+                document.getElementById("imagedest").innerHTML = "<img src='5sinewave.gif'>"; 
+                    break;
+        }
+    	}
+//---------------   END LOCALIZEABLE   ---------------
+
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+
+<style type="text/css">
+<!--
+.style4 {
+	color: #FF0000;
+	font-style: italic;
+}
+.style6 {
+	font-size: 14px;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-style: italic;
+}
+.style2 {font-size: 12px}
+.style10 {
+	color: #000000;
+	font-weight: bold;
+	font-size: 36px;
+}
+.style12 {font-size: 14px; font-weight: bold; color: #000000; }
+.style15 {	color: #333333;
+	font-weight: bold;
+	font-style: italic;
+}
+.style16 {color: #FF0000}
+.style17 {color: #333333}
+.style18 {color: #FF0000; font-size: 18px; }
+.style19 {color: #D5EDA1}
+.style14 {color: #D5EDA1; font-size: 10px; }
+.style20 {font-size: 10px}
+.style21 {
+	color: #FF0000;
+	font-weight: bold;
+	font-size: 12px;
+}
+.style22 {color: #0000FF}
+.style23 {color: #F4FFE4}
+.style24 {font-size: 11px; color: #D5EdA1; }
+.style25 {
+	font-size: 12px;
+	color: #000000;
+	font-weight: bold;
+}
+.style26 {color: #D5EDB3}
+.style26 {font-size: 18px; color: #CC0000; }
+.style27 {font-size: 24px;
+	font-style: italic;
+	font-weight: bold;
+	color: #FF0000;
+}
+-->
+</style>
+<script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+<script src="Scripts/wz_jsgraphics.js" type="text/javascript"></script>
+<script src="Scripts/line.js" type="text/javascript">
+</script>
+</head>
+<body bgcolor="#F4FFE4" onload="MM_preloadImages('2.jpg')">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#D5EDB3">
+    <td colspan="3" rowspan="2" bgcolor="#00FF00"><div align="center"><img src="logo.jpg" alt="Header image" width="162" height="137" border="0" /></div></td>
+    <td height="50" colspan="3" align="left" valign="bottom" nowrap="nowrap" bgcolor="#00FF00" id="logo"><p class="style10">Department of Civil Engineering</p>
+    <p class="style10">&nbsp; </p></td>
+    <td width="163" bgcolor="#00FF00">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#D5EDB3">
+    <td height="87" colspan="3" align="center" valign="top" bgcolor="#00FF00" id="tagline"><span class="style27">VIRTUAL SMART STRUCTURES AND DYNAMICS LABORATORY</span></td>
+	<td width="163" bgcolor="#00FF00">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td colspan="7" bgcolor="#5C743D"><img src="mm_spacer.gif" alt="" width="1" height="2" border="0" /></td>
+  </tr>
+
+  <tr>
+    <td height="4" colspan="7" background="mm_dashed_line.gif" bgcolor="#99CC66"><img src="mm_dashed_line.gif" alt="line decor" width="4" height="3" border="0" /></td>
+  </tr>
+
+  <tr bgcolor="#99CC66">
+  	<td colspan="7" id="dateformat" height="20"><a href="http://web.iitd.ac.in/~strlab/">
+  	  <marquee>
+  	    A COMPONENT OF STRUCTURAL ENGINEERING LABORATORY
+      </marquee>
+      </a>
+        </marquee>
+  	  <marquee></marquee></td></tr>
+  <tr>
+    <td colspan="7" bgcolor="#99CC66" background="mm_dashed_line.gif"><img src="mm_dashed_line.gif" alt="line decor" width="4" height="3" border="0" /></td>
+  </tr>
+
+  <tr>
+    <td colspan="7" bgcolor="#5C743D"><img src="mm_spacer.gif" alt="" width="1" height="2" border="0" /></td>
+  </tr>
+
+ <tr>
+    <td width="225" valign="top" bgcolor="#5C743D"><table width="230" height="618" border="0" cellpadding="0" cellspacing="0" id="navigation">
+      <tr>
+        <td width="230"><div align="center"><a href="home.html" class="navText">HOME</a></div></td>
+      </tr>
+      <tr>
+        <td width="230"><div align="center"><a href="about.html" class="navText">ABOUT</a></div></td>
+      </tr>
+      <tr>
+        <td width="230"><div align="center"><a href="experiments.html" class="navText">EXPERIMENTS</a></div></td>
+      </tr>
+      <tr>
+        <td height="38"><p align="center" class="navText style25"><strong><a href="ss.html">MORE ABOUT SMART MATERIALS AND <strong>STRUCTURES</strong></a></strong></p></td>
+      </tr>
+      <tr>
+        <td width="230"><div align="center"><a href="people.html" class="navText">PEOPLE</a></div></td>
+      </tr>
+      <tr>
+        <td width="230"><div align="center">
+            <p><a href="contacts.html" class="navText">CONTACT US </a></p>
+          <p><span class="style26">Trigger Based</span></p>
+          <p>&nbsp;</p>
+        </div></td>
+      </tr>
+      <tr>
+        <td width="230" height="15"><p align="center" class="style19"><a href="exp1.html">- Experiment 1</a><a href="exp2.html">- Experiment 2</a><a href="exp3.html">- Experiment 3</a><a href="exp4.html">- Experiment 4 </a></p>
+            <p align="center" class="style26">Simulation Based </p>
+          <p align="center" class="style19"><a href="exp5.html">- Experiment 5 </a><a href="exp6.html">- Experiment 6 </a><a href="exp7.html">- Experiment 7</a><a href="exp8.html">- Experiment 8 </a></p>
+          </td>
+      </tr>
+    </table>       <a href="javascript:;" class="navText"></a><br />
+  	&nbsp;&nbsp;<br />
+&nbsp;<br />
+&nbsp;
+<p><br />
+  &nbsp;  &nbsp;<br />
+  &nbsp;  &nbsp;<br />
+  &nbsp;  &nbsp;<br />
+  &nbsp; </p>
+ 
+<p>&nbsp;</p>
+ 
+<p>&nbsp;</p>
+ 
+<p>&nbsp;</p>
+ 
+<p>&nbsp;</p>
+ <table width="223" height="41" border="1">
+  </table>
+<p align="right">&nbsp;</p>
+<p></p>
+  	<p><br />
+  &nbsp;  &nbsp;<br />
+  &nbsp;  &nbsp;<br />
+  &nbsp;  &nbsp;<br />
+  &nbsp; </p>
+  	 
+  	<p>&nbsp;</p>
+  	 
+  	<p>&nbsp;</p>
+  	 
+  	<p>&nbsp;</p>
+  	 
+  	<p>&nbsp;</p>
+  	 
+  	<p>&nbsp;</p>
+  	 
+  	<p>&nbsp;</p>
+  	</td>
+    <td width="50"><img src="mm_spacer.gif" alt="" width="50" height="1" border="0" /></td>
+    <td colspan="2" valign="top"><img src="mm_spacer.gif" alt="" width="305" height="1" border="0" /><br />
+	&nbsp;<br />
+	&nbsp;<br />
+	<table width="601" height="339" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="599" height="43" class="pageName"><p class="style4">EXPERIMENT 5 </p>          </td>
+		</tr>
+
+		<tr>
+          <td class="bodyText"><p align="center" class="style6"><span class="style15">Modes of Vibrations of Beams under flexure</span></p>
+          <p>
+            <script type="text/javascript">
+AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0','width','958','height','514','src','mainbeam1','quality','high','pluginspage','http://www.macromedia.com/go/getflashplayer','movie','mainbeam1' ); //end AC code
+</script><noscript><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="958" height="514">
+              <param name="movie" value="mainbeam1.swf" />
+              <param name="quality" value="high" />
+              <embed src="mainbeam1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="958" height="514"></embed>
+            </object></noscript>
+          </p></td>
+		</tr>
+      </table>
+	 
+	<p class="style21"><span class="style22">To read the theory Manual of the experiment <a href="manual_expt5.pdf" target="_blank">click here </a></span></p>
+	<form method="post" name="frm" id="frm">
+	  <p class="style17">Enter the length of beam,L (in meters)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type = "text" name="txt1" />
+	  </p>
+	  <table width="740" height="124" border="1">
+        <tr>
+          <td width="309"><p class="style17">Enter the breadth of beam,b (in meters) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type = "text" name="txt2" />
+          </p>
+            <p class="style17"> <br />
+              Enter the depth of beam,D &nbsp;(in meters)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type = "text" name= "txt3" />
+            </p></td>
+          <td width="80"><div align="center" class="style18">OR</div></td>
+          <td width="329"><p><br />
+                <span class="style17">Enter the Area of beam,A (in squaremeters) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type = "text" name="txt7" />
+                </span></p>
+            <p class="style17"><br />
+              Enter the moment of Inertia of beam,I &nbsp;(in meters)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type = "text" name= "txt8" />
+            </p></td>
+        </tr>
+      </table>
+	  <p class="style16">&nbsp;</p>
+	  <p class="style16"><span class="style17">Enter the density of beam &nbsp;(in kg/m<sup>3</sup>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <input type = "text" name="txt4" />
+	    </p>
+	  <p class="style17"><br />
+	    Enter the Young's modulus of Elasticity of beam,E (in N/m<sup>2</sup>) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <input type = "text" name="txt5" />
+      </p>
+	  <p class="style17"><br />
+	    Select the value of n </p>
+	  <p class="style17"><br />
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+	    <input name="option1" type="radio" onclick='check_value(1)'  value="1">
+	    1</p>
+	  <p class="style17"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	      <input type="radio" name="option1"  value="2" onclick='check_value(2)'>
+	    2 </p>
+	  <p class="style17"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	      <input type="radio" name="option1"  value="3" onclick='check_value(3)' />
+	    3 </p>
+	  <p class="style17"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	      <input type="radio" name="option1"  value="4" onclick='check_value(4)' />
+	    4</p>
+	  <p class="style17"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	      <input type="radio" name="option1"  value="5" onclick='check_value(5)' />
+	    5 </p>
+	  <p align="center" class="style17"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	      <input name="button" type="button" onclick= "frequency()" value="Calculate"/>
+	    &nbsp;&nbsp;&nbsp;&nbsp;
+	    <input name="reset" type="reset" />
+      </p>
+	  <p class="style17"><br />
+	    Frequency,f<sub>n</sub> (in Hz) 
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <input type="text" name= "txt6" />
+      </p>
+	  <p class="style17">&nbsp;</p>
+	  <p class="style17">Mode Shapes  of the Beam </p>
+	  <div id='imagedest'>
+	    <div align="center"><img src="thinking-pic.jpg" alt="think" width="127" height="103" /> </div>
+	  </div>
+	  </form>
+	<div id='imagedest'>
+	  <p class="style25">EXERCISE FOR USERS :</p>
+	  <p><strong> <span class="style2"><em>1) Compute frequency for five different lengths of the beam keeping all other parameters constant. Fill in the values below and plot a graph between frequency and length</em></span>.</strong></p>
+	  <p><strong>- What do you observe ?</strong></p>
+	  <p><strong>- Why do you observe so ? </strong></p>
+	  <p>[Hint : Go through theory manual provided at top of the page] </p>
+	</div>
+	 <form method = "post" name = "frm2" id="frm2" >
+       <p>&nbsp;</p>
+       <p class="style17">&nbsp;<span class="style2"><strong> L1:</strong></span>&nbsp; 
+         <input type = "text" name="txt9" />
+         <span class="style2"><strong>L2:</strong></span>&nbsp;
+         <input type = "text" name="txt10" /> 
+         <span class="style2"><strong>L3:</strong></span>&nbsp;&nbsp;
+           <input type = "text" name="txt11" /> 
+           <span class="style2"><strong>L4:</strong></span>&nbsp;
+           <input type = "text" name="txt12" />
+       </p>
+       <p class="style17">&nbsp;<span class="style2"><strong> L5:</strong></span>&nbsp;&nbsp;
+           <input type = "text" name="txt13" />
+       </p>
+       <span class="style17"><br />
+       <br />
+       </span>
+       <p class="style17"><span class="style2"><strong>&nbsp;&nbsp;f1:&nbsp;</strong></span>&nbsp;&nbsp;
+           <input type = "text" name="txt14" /> 
+           <span class="style2"><strong>&nbsp;&nbsp;f2:&nbsp;</strong></span>
+           <input type = "text" name="txt15" /> 
+           <span class="style2"><strong>&nbsp;&nbsp;f3:&nbsp;</strong></span>
+           <input type = "text" name="txt16" /> 
+           <span class="style2"><strong>&nbsp;&nbsp;f4:&nbsp;</strong></span>&nbsp;
+           <input type = "text" name="txt17" />
+       </p>
+       <p class="style17"><span class="style2"><strong>&nbsp;&nbsp;f5:&nbsp;</strong></span>&nbsp;
+           <input type = "text" name="txt18" />
+       </p>
+       <p class="style17">
+         <input name="button2" type="button" onclick= "plotfl()" value="plot graph between f and L"/>
+       ( You can see the graph below) </p>
+       <p class="style17">[ PRESS RESET TO CLEAR OLD VALUES OF Exercise 1 ] </p>
+       <p class="style17">
+         <input name="reset2" type="reset" />
+       </p>
+       <p class="style17"><strong><span class="style2"><em>2) Compute frequency for five different Young's Modulus of Elasticity of the beam keeping all other parameters constant. Fill in the values below and plot a graph between frequency and Young's Modulus </em></span>.</strong></p>
+       <p><strong>- What do you observe ?</strong></p>
+       <p><strong>- Why do you observe so ? </strong></p>
+       <p>[Hint : Go through theory manual provided at top of the page]<br />
+          <br />
+          :<span class="style2"><strong>&nbsp;E1:</strong></span>&nbsp;
+           <input type = "text" name="txt19" /> 
+           <span class="style2"><strong>&nbsp;E2:</strong></span>&nbsp;
+           <input type = "text" name="txt20" /> 
+           <span class="style2"><strong>&nbsp;E3:</strong></span>
+          <input type = "text" name="txt21" /> 
+           <span class="style2"><strong>&nbsp;E4: </strong></span>
+          <input type = "text" name="txt22" />
+       </p>
+       <p class="style17"><span class="style2"><strong>&nbsp;E5:</strong></span>&nbsp;
+           <input type = "text" name="txt23" />
+      </p>
+       <br>
+      &nbsp;&nbsp;
+      <Input type="button" value="plot graph between f and E" onclick= "plotfE()"/>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<Input type="Reset">
+	  <br>
+</form>
+	<div id="lineCanvas" style="overflow: auto;position:relative; height:400px;width:400px;"></div>
+
+	<div id="lineCanva" style="overflow: auto;position:relative; height:400px;width:400px;"></div>
+	<script type="text/javascript">
+function plotfl()
+{
+var g = new line_graph();
+
+var l1= document.frm2.txt9.value;
+var l2= document.frm2.txt10.value;
+var l3= document.frm2.txt11.value;
+var l4= document.frm2.txt12.value;
+var l5= document.frm2.txt13.value;
+
+var f1= document.frm2.txt14.value;
+var f2= document.frm2.txt15.value;
+var f3= document.frm2.txt16.value;
+var f4= document.frm2.txt17.value;
+var f5= document.frm2.txt18.value;
+
+g.add(l1, f1);
+g.add(l2, f2);
+g.add(l3, f3);
+g.add(l4, f4);
+g.add(l5, f5);
+
+g.render("lineCanvas", "F v/s L  Graph");
+}
+function plotfE()
+{
+var g = new line_graph();
+
+var E1= document.frm2.txt19.value;
+var E2= document.frm2.txt20.value;
+var E3= document.frm2.txt21.value;
+var E4= document.frm2.txt22.value;
+var E5= document.frm2.txt23.value;
+
+var f1= document.frm2.txt14.value;
+var f2= document.frm2.txt15.value;
+var f3= document.frm2.txt16.value;
+var f4= document.frm2.txt17.value;
+var f5= document.frm2.txt18.value;
+
+g.add(E1, f1);
+g.add(E2, f2);
+g.add(E3, f3);
+g.add(E4, f4);
+g.add(E5, f5);
+
+
+g.render("lineCanva", "F v/s E  Graph");
+}
+</script>
+
+    <p>&nbsp;      </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  <tr>
+    <td width="225">&nbsp;</td>
+    <td width="50">&nbsp;</td>
+    <td width="4">&nbsp;</td>
+    <td width="737"><div align="right">
+      <p>&nbsp;</p>
+    </div></td>
+    <td width="3">&nbsp;</td>
+    <td width="4">&nbsp;</td>
+	<td width="163" nowrap="nowrap"><div align="right">
+	  <blockquote>
+	    <p align="right" class="style2">&nbsp;</p>
+	    </blockquote>
+	  </div></td>
+  </tr>
+</table>
+</body>
+</html>

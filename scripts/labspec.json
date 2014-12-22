@@ -1,0 +1,94 @@
+{
+    "lab": {
+        "build_requirements": {
+            "platform": {
+                "arch": "i386", 
+                "build_steps": {
+                    "build": [], 
+                    "configure": [], 
+                    "post_build": [], 
+                    "pre_build": [], 
+                    "status": []
+                }, 
+                "installer": [], 
+                "os": "ubuntu", 
+                "osVersion": "12", 
+                "service_pack": ""
+            }
+        }, 
+        "description": {
+            "developer": [
+                {
+                    "contact": {
+                        "alternate_email": "", 
+                        "email": "sbhalla@civil.iitd.ac.in", 
+                        "mobile_number": "", 
+                        "office_number": ""
+                    }, 
+                    "department": "", 
+                    "institute": "IIT Delhi", 
+                    "name": "Suresh Bhalla", 
+                    "organization": "", 
+                    "role": "Lab Developer", 
+                    "title": "", 
+                    "web": ""
+                }, 
+                {
+                    "contact": {
+                        "alternate_email": "", 
+                        "email": "sumedhamoharana@civil.iitd.ac.in", 
+                        "mobile_number": "", 
+                        "office_number": ""
+                    }, 
+                    "department": "", 
+                    "institute": "IIT Delhi", 
+                    "name": "Sumedha Moharana", 
+                    "organization": "", 
+                    "role": "Lab RA", 
+                    "title": "", 
+                    "web": ""
+                }
+            ], 
+            "discipline": [
+                "Civil Engineering"
+            ], 
+            "id": "civil16", 
+            "integration_level": 4, 
+            "name": "Virtual Smart Structures and Dynamics Lab", 
+            "server-side": true, 
+            "status": "Released", 
+            "type": "Remote Triggered"
+        }, 
+        "runtime_requirements": {
+            "platform": {
+                "arch": "i386", 
+                "hosting": "dedicated", 
+                "installer": [], 
+                "lab_actions": {
+                    "backup": [], 
+                    "clean": [], 
+                    "init": [], 
+                    "pause": [], 
+                    "publish": [], 
+                    "restore": [], 
+                    "resume": [], 
+                    "shutdown": [], 
+                    "start": [], 
+                    "stats": [], 
+                    "stop": []
+                }, 
+                "memory": {
+                    "max_required": "2gb", 
+                    "min_required": "256mb"
+                }, 
+                "os": "ubuntu", 
+                "osVersion": "12", 
+                "servicepack": "", 
+                "storage": {
+                    "min_required": "10gb"
+                }
+            }
+        }
+    }, 
+    "template": "1.0"
+}
